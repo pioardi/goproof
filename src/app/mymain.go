@@ -9,6 +9,8 @@ import (
 	"strconv"
 	"strings"
 	"sync"
+
+	"github.com/pioardi/goproof/src/user"
 )
 
 var (
@@ -30,9 +32,7 @@ func supergo(wg *sync.WaitGroup, i int, c chan string) {
 
 // init is called prior to main.
 func init() {
-
-	// var user = MyCustomType{username: "username", password: "password"}
-	// user.method()
+	log.Println(user.Export)
 	log.SetPrefix("TRACE : ")
 	log.SetFlags(log.Ldate | log.Lmicroseconds | log.Lshortfile)
 	file, err := os.OpenFile("server.log",
