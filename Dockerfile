@@ -8,7 +8,7 @@ ADD . /go/src/myapp
 # Build the outyet command inside the container.
 # (You may fetch or manage dependencies here,
 # either manually or with a tool like "godep".)
-ENTRYPOINT [ "go" , "run" , "/go/src/myapp/mymain.go" ]
+ENTRYPOINT [ "go" , "run" , "/go/src/myapp/src/app/mymain.go" ]
 
 # Document that the service listens on port 8080.
 EXPOSE 8080

@@ -4,6 +4,9 @@ import (
 	"log"
 )
 
+// Export is a proof
+var Export = "JAM a vre"
+
 func init() {
 	log.SetPrefix("user.go")
 }

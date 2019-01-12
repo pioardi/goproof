@@ -29,6 +29,9 @@ func supergo(wg *sync.WaitGroup, i int, c chan string) {
 
 // init is called prior to main.
 func init() {
+
+	// var user = MyCustomType{username: "username", password: "password"}
+	// user.method()
 	log.SetPrefix("TRACE : ")
 	log.SetFlags(log.Ldate | log.Lmicroseconds | log.Lshortfile)
 	file, err := os.OpenFile("server.log",
