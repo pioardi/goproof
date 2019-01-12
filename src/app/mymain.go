@@ -33,6 +33,9 @@ func supergo(wg *sync.WaitGroup, i int, c chan string) {
 // init is called prior to main.
 func init() {
 	log.Println(user.Export)
+	user.Run("Ok")
+	var user = user.MyCustomType{}
+	log.Println(user)
 	log.SetPrefix("TRACE : ")
 	log.SetFlags(log.Ldate | log.Lmicroseconds | log.Lshortfile)
 	file, err := os.OpenFile("server.log",

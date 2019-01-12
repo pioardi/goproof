@@ -19,8 +19,8 @@ type notifier interface {
 
 // MyCustomType my first custom type
 type MyCustomType struct {
-	username string
-	password string
+	Username string
+	Password string
 	isRoot   bool
 }
 
