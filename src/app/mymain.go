@@ -23,7 +23,7 @@ var (
 
 func port() string {
 	port := os.Getenv("PORT")
-	if len(port) == 0 {
+	if port == "" {
 		port = "8080"
 	}
 	return ":" + port
