@@ -22,6 +22,7 @@ var (
 var port = os.Getenv("PORT")
 
 func supergo(wg *sync.WaitGroup, i int, c chan string) {
+
 	log.Println("Goroutine " + strconv.Itoa(i))
 	c <- strconv.Itoa(i)
 	wg.Done()

@@ -41,3 +41,8 @@ func (user *MyCustomType) method() {
 func provaInterfaccia(n notifier) {
 	n.notify()
 }
+
+// Run is a proof
+func Run(searchTerm string) {
+	log.Println("Hello exported func")
+}
