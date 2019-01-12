@@ -21,7 +21,13 @@ var (
 	err   *log.Logger // Critical problem
 )
 
-var port = os.Getenv("PORT")
+func port() string {
+	port := os.Getenv("PORT")
+	if len(port) == 0 {
+		port = "8080"
+	}
+	return ":" + port
+}
 
 func supergo(wg *sync.WaitGroup, i int, c chan string) {
 
@@ -54,7 +60,6 @@ func init() {
 
 // main is the entry point for the program.
 func main() {
-	log.Println("Web server starting on port ", port, "and listening for requests")
 	// endof htt server
 	var wg sync.WaitGroup
 	// 10 + web server goroutine
@@ -81,9 +86,11 @@ func multireturn(i, j string) (x, y string) {
 
 func startServer() {
 	// http server
+	var port = port()
 	log.Println("Starting web server , stop to play start to work really on go")
+	log.Println("Web server starting on port ", port, "and listening for requests")
 	http.HandleFunc("/", sayHello)
-	log.Fatal(http.ListenAndServe(":"+port, nil))
+	log.Fatal(http.ListenAndServe(port, nil))
 }
 
 func sayHello(w http.ResponseWriter, r *http.Request) {
